@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="at.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <!-- Script de rolagem para as ancoras -->
+  <script>$(document).ready(function(){
+    $("a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          window.location.hash = hash;
+        });
+      }
+    });
+  });
+</script>
+<script type="text/javascript">
+//Seria bom ter um banco..
+
+// usar Rio de Janeiro e Porto Alegre como exemplo
+function lugares(){
+  var viagem=0;
+  if(document.getElementById("ori").value=="rio de janeiro" && document.getElementById("des").value=="porto alegre"){
+    viagem = 200;
+  }
+  else{
+    alert("Use 'rio de janeiro' e 'porto algre' como exemplo // coloque uma origem e um destino validos.");
+    viagem=0;
+  }
+  return viagem;
+}
+function transporte(){
+  var transp=0;
+  if(document.getElementById("bus").checked==true && document.getElementById("aviao").checked==true){
+    alert("Por favor selecionar somente um tipo de transporte");
+  }
+  else if (document.getElementById("bus").checked==true) {
+    transp=lugares() - 100;
+  }
+  else if(document.getElementById("aviao").checked==true){
+    transp =lugares() + 100;
+  }
+  else{
+    alert("Selecione um meio de transporte.");
+    transp=0;
+  }
+  return transp;
+}
+function idavolta(){
+  var passagem=0;
+  if(document.getElementById("iv").checked==true){
+    passagem=2*transporte();
+  }
+  else if(document.getElementById("si").checked==true){
+    passagem=transporte();
+  }
+  else{
+    alert("informe se voce quer passagem somente de ida ou de ida e volta");
+    passagem=0;
+  }
+  return passagem;
+}
+function hospedagem(){
+  var precoFix=180;
+  var total;
+  if(document.getElementById("hosp").checked==true){
+    total = precoFix * document.getElementById("dias").value;
+  }
+  else {
+    total=0;
+  }
+  return total;
+}
+function calc(){
+  var totalViagem=0;
+  totalViagem = lugares() + transporte()+ idavolta() + hospedagem();
+  alert("A sua simulação deu um total de: R$"+totalViagem.toFixed(2));
+  //alert feito por não conseguir impedir o alert de cima para que não aparça caso o formulario não for preechido corretamente. // arrumar.
+  alert("Se voce esqueceu de algum passo, preencha o formulario novamente para obter uma melhor simulação ou ligue para nós.");
+}
+</script>
+<title>Agencia de turismo</title>
+<link rel="icon" href="img/icopage.jpg">
+</head>
+<body>
+  <!-- Ancoras da pagina// bg no menu-->
+  <div class="menu">
+    <ul class="nav">
+      <li ><a class="nav-link" href="at.html">Inicio</a></li>
+      <li ><a class="nav-link" href="#nos">Quem somos</a></li>
+      <li ><a class="nav-link" href="#infos">Informações</a></li>
+      <li ><a class="nav-link" href="#ferias">Férias</a>
+        <li ><a class="nav-link" href="#consulta">Consultas</a></li>
+
+      </li>
+    </ul>
+  </div>
+  <div id="lugares">
+    <div id="destinos" class="carousel slide" data-ride="carousel">
+      <!-- icone -->
+      <ul class="carousel-indicators">
+        <li data-target="#destinos" data-slide-to="0" class="active"></li>
+        <li data-target="#destinos" data-slide-to="1"></li>
+        <li data-target="#destinos" data-slide-to="2"></li>
+      </ul>
+      <!-- Imagens -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/ushuaia.jpg" alt="Imagem de Ushuaia">
+        </div>
+        <div class="carousel-item">
+          <img src="img/uruguai.jpg" alt="Imagem Uruguai">
+        </div>
+        <div class="carousel-item">
+          <img src="img/rioDeJaneiro.jpg" alt="Imagem Rio de Janeiro">
+        </div>
+      </div>
+      <!-- botões direita e esquerda -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </div>
+  <div id="nos">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <h2>Quem somos</h2>
+          <p>A Lorem Ipsum – Sua Viagem, Seu Destino foi fundada após mais de 10 anos de trabalho e idealização, neste período o sócio-fundador buscou formação acadêmica em bacharelado em turismo e uma vasta experiência na área. A paixão por viajar, virou profissão.</p>
+          <p>É através desta experiência e dedicação que oferecemos aos clientes qualidade e segurança durante suas viagens.</p>
+          <p>Sim! Temos viagens para qualquer lugar do mundo.</p>
+        </div>
+        <div class="col-sm-8">
+          <h2>Como atuamos</h2>
+          <p>Lorem Impsum</p>
+          <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+          <br>
+          <h3>Nosso endereço</h3>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d431.7862131840525!2d-51.22608437683948!3d-30.028545443781383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197908e9d21ca1%3A0x288c62bb47cac548!2sAv.+Ot%C3%A1vio+Rocha+-+Centro+Hist%C3%B3rico%2C+Porto+Alegre+-+RS!5e0!3m2!1spt-BR!2sbr!4v1550663233090"
+          width="auto" height="auto" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="infos">
+    <div id="inf">
+      <h3>Entre em contato conosco</h3>
+      <p>Através do telefone: (12) 98732-1123</p>
+      <h5>Ou preencha o formulario abaixo.</h5><br>
+      <form>
+        <label for="nome"><strong>Seu nome</strong></label>
+        <input type="text" id="pnome" name="primeironome" required placeholder="Seu nome...">
+        <label for="phonenum"><strong>Numero de celular</strong></label><br>
+        <input id="phonenum" type="tel" pattern="^\d{2}-\d{5}-\d{4}$" placeholder="Ex.: 51-91234-9876"><br><br>
+        <label for="email"><strong>Seu email</strong></label>
+        <input type="text" name="destino" required placeholder="Ex.: fulan@gmail.com"><br>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </div>
+  <div id="ferias">
+    <table>
+      <tr>
+        <th><img data-toggle="tooltip" data-placement="top" title="Parque aquatico!" src="img/t1.jpg" class="circle" width="auto" height="360px"><br>
+          <h4>Férias no Wet’n Wild</h4>
+          <p>Eentre em <a href="#infos">contato</a> conosco</p>
+        </th>
+        <th><img data-toggle="tooltip" data-placement="top" title="Parque aquatico!" src="img/roma.jpg" class="circle" width="auto" height="360px"><br>
+          <h4>Férias no Thermas Water Park</h4>
+          <p>Entre em <a href="#infos">contato</a> conosco</p>
+        </th>
+      </tr>
+    </table>
+  </div>
+  <div class="row" id="consulta">
+    <div class="col-sm-12">
+      <h2><strong>Viagem para: </strong></h2>
+      <form>
+        <label for="origem"><strong>Origem</strong></label>
+        <input id="ori" type="text" name="origem" required placeholder="Ex.: Rio de Janeiro"><br>
+        <label for="destino"><strong>Destino</strong></label>
+        <input  id="des" type="text" name="destino" placeholder="Ex.: Porto Alegre"><br>
+        <input id="bus" type="checkbox" name="psgm"><strong>Onibus</strong>
+        <input id="aviao" type="checkbox" name="psgm"><strong>Avião</strong><br>
+        <input id="iv" type="radio" name="psgm" value="idavolta"><strong>Ida e volta</strong>
+        <input id="si" type="radio" name="psgm" value="ida"><strong>Somente ida</strong><br>
+        <input  id="hosp" type="checkbox" name="psgm"><strong>hospedagem dias</strong>
+        <input id="dias" type="number" name="dias"  min="0" max="30"><br><br>
+        <button type="submit" class="btn btn-primary" onclick="calc()">Calcular preços</button>
+        <!-- Como não tem um back não vai calcular nada -->
+      </form>
+    </div>
+  </div>
+  <footer>
+    <h6>© COPYRIGHT 2019. Todos os direitos reservados | Desenvolvido por Gabriel.</h6>
+  </footer>
+
+</body>
+</html>
+<!--

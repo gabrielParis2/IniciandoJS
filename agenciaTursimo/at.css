@@ -1,0 +1,150 @@
+/*regras de comportamento de body, embora não funcione por causa do framework que é utilizado via link (bootstrap)*/
+body{
+  background-color: green;
+  margin:0px;
+  padding: 0px;
+  font-family: 'Cinzel', serif;
+
+}
+/*essa classe faz todo o jogo de cores e posiçoes e o(s) elementos do menus  recebem essas propriedades por serem adequadas no momento da criação */
+.menu{
+  position: fixed;
+  background-color: #3EACFF;
+  width: 100%;
+  height: 80px;
+  margin: 0px;
+  margin-top: 0px;
+  font-size: 20px;
+  font-family: 'Coiny', cursive;
+}
+/*cor definida, por ter sido utilizada framework online*/
+.nav-link{
+  color: black;
+}
+/*classe que define o tamanho da div para se adequar melhor a pagina*/
+#lugares{
+  height: auto;
+  width: 100%;
+  padding-top:80px;
+}
+/*classe com definições do estilo do bloco que fala sobre a empresa */
+#nos{
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding-top:140px;
+  height: 700px;
+  width: 100%;
+  background-image: url("img/praia.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+}
+/*Estilização, tais como cores, tamanho e fonte, da div que abriga o formulario de contato*/
+#infos{
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-image: url("img/bgt.jpg");
+  height: 754px;
+  width: 100%;
+  padding: 10px 50px;
+  padding-top: 110px;
+}
+/*Classe responsavél por deixar o formulario de contato personalizado*/
+#inf{
+  background-color: white;
+  width: 80%;
+  height:auto;
+  margin: auto;
+  border-radius: 25px;
+  padding:12px 20px;
+}
+/*classe utiizada para centralizar e melhorar a visualizção do merchandising de parceiros*/
+#ferias{
+  width: 100%;
+  height: 600px;
+  text-align: center;
+  padding-top: 100px;
+  background-color: #821DFD;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+/*Classe responsavél por deixar o formulario de consulta de preços personalizado*/
+#consulta{
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-image: url("img/bgt.jpg");
+  height: 754px;
+  width: 100%;
+  padding: 10px 50px;
+  padding-top: 110px;
+  font-size: 20px;
+}
+/*responsavél por manter o menu alinhado à direita e no centro*/
+ul{
+  float: right;
+  padding-top: 18px;
+
+}
+/*definições do tamanho do carousel e imagens*/
+.carousel-inner img {
+  width: 100%;
+  height: 580px;
+}
+/*Estilo do formulário de consultas*/
+input[type=text]{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=submit]{
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border:none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+input[type=submit]:hover{
+  background-color: #45A049;
+}
+input[type=checkbox]{
+  margin-left: 10px;
+  
+}
+input[type=radio]{
+  margin-left: 10px;
+}
+input[type=number]{
+  border-radius: 20px;
+  background-color: blue;
+  text-align: center;
+  font-weight: bold;
+  color:white;
+}
+/*define tamnho e estilização do conteiner que fala sobre a empresa*/
+.container{
+  border-radius: 50px;
+  background-color: white;
+  padding: 20px;
+  margin-top:30px;
+}
+/*Estilos gerais da table e th*/
+th{
+  padding: 15px 20px;
+}
+table{
+  margin-left: 70px;
+}
+
+/*Formatção de estilo do footer*/
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:white ;
+  color: black;
+  text-align: center;
+}
